@@ -461,13 +461,26 @@ ul {
   max-width: 780px;
 }
 
-.email-link {
+.email-link,
+.phone-link {
   display: inline-flex;
   margin-top: 12px;
   color: var(--green);
   font-family: "Cascadia Code", Consolas, monospace;
   font-size: 14px;
   font-weight: 800;
+}
+
+.phone-link {
+  margin-left: 18px;
+  color: var(--cyan);
+}
+
+@media (max-width: 640px) {
+  .phone-link {
+    display: flex;
+    margin-left: 0;
+  }
 }
 
 @media (max-width: 980px) {
