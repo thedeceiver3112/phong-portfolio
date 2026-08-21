@@ -154,6 +154,10 @@ h3 {
   margin-top: 30px;
 }
 
+.contact-actions {
+  justify-content: flex-end;
+}
+
 .button {
   display: inline-flex;
   min-height: 46px;
@@ -180,6 +184,14 @@ h3 {
   border: 1px solid var(--line);
   background: rgb(255 255 255 / 68%);
   color: var(--ink);
+}
+
+.email-link {
+  flex-basis: 100%;
+  color: var(--green-dark);
+  font-size: 14px;
+  font-weight: 750;
+  text-align: right;
 }
 
 .system-card {
@@ -489,7 +501,12 @@ ul {
   }
 
   .contact-actions {
+    justify-content: flex-start;
     margin-top: 0;
+  }
+
+  .email-link {
+    text-align: left;
   }
 }
 
