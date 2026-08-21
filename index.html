@@ -18,7 +18,7 @@
   </head>
   <body>
     <main>
-      <section class="hero" id="top">
+      <section class="hero reveal" id="top">
         <nav class="nav" aria-label="Primary navigation">
           <a class="brand" href="#top" aria-label="Nguyen Tran Hai Phong">
             <span class="brand-mark">NTP</span>
@@ -109,7 +109,7 @@ outputs:
         </div>
       </section>
 
-      <section class="section intro" id="systems">
+      <section class="section intro reveal" id="systems">
         <div class="section-heading">
           <p class="eyebrow">System focus</p>
           <h2>Software for production floors, not just screens.</h2>
@@ -125,7 +125,7 @@ outputs:
         </div>
       </section>
 
-      <section class="section module-grid" aria-label="System modules">
+      <section class="section module-grid reveal" aria-label="System modules">
         <article class="module-card">
           <span class="module-code">MES-01</span>
           <h3>Production Operations</h3>
@@ -160,7 +160,7 @@ outputs:
         </article>
       </section>
 
-      <section class="section" id="projects">
+      <section class="section reveal" id="projects">
         <div class="section-heading">
           <p class="eyebrow">Case studies</p>
           <h2>Selected factory systems</h2>
@@ -246,7 +246,7 @@ outputs:
         </div>
       </section>
 
-      <section class="section tech-section" id="tech">
+      <section class="section tech-section reveal" id="tech">
         <div class="section-heading">
           <p class="eyebrow">Technical stack</p>
           <h2>Tools I use to connect code, data and devices.</h2>
@@ -271,7 +271,7 @@ outputs:
         </div>
       </section>
 
-      <section class="section" id="experience">
+      <section class="section reveal" id="experience">
         <div class="section-heading">
           <p class="eyebrow">Experience</p>
           <h2>Work history</h2>
@@ -312,7 +312,7 @@ outputs:
         </div>
       </section>
 
-      <section class="contact" id="contact">
+      <section class="contact reveal" id="contact">
         <div>
           <p class="eyebrow">Contact</p>
           <h2>Need someone who understands both code and factory operations?</h2>
@@ -344,5 +344,28 @@ outputs:
         </div>
       </section>
     </main>
+    <script>
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (!reduceMotion) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.14 }
+        );
+
+        document.querySelectorAll('.reveal').forEach((section) => observer.observe(section));
+      } else {
+        document.querySelectorAll('.reveal').forEach((section) => {
+          section.classList.add('is-visible');
+        });
+      }
+    </script>
   </body>
 </html>
