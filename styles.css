@@ -432,8 +432,9 @@ ul {
 .timeline span {
   color: var(--green);
   font-family: "Cascadia Code", Consolas, monospace;
-  font-size: 12px;
-  font-weight: 800;
+  font-size: 15px;
+  font-weight: 900;
+  line-height: 1.45;
 }
 
 .contact {
